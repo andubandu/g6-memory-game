@@ -1,54 +1,64 @@
-import { useState } from 'react'
-import StartScreen from './components/StartScreen'
-import Game from './components/Game'
-import ResultScreen from './components/ResultScreen'
-import Menu from './components/Menu'
+import { useState } from 'react';
+import StartScreen from './components/StartScreen';
+import Game from './components/Game';
+import ResultScreen from './components/ResultScreen';
+import Menu from './components/Menu';
 
 function App() {
-  const [gameStarted, setGameStarted] = useState(false)
-  const [gameOptions, setGameOptions] = useState(null)
-  const [gameStats, setGameStats] = useState(null)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [gameStarted, setGameStarted] = useState(false);
+  const [gameOptions, setGameOptions] = useState(null);
+  const [gameStats, setGameStats] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleStartGame = (options) => {
-    setGameOptions(options)
-    setGameStarted(true)
-    setGameStats(null)
-  }
+    console.log('App.jsx: handleStartGame called with options:', options);
+    setGameOptions(options);
+    setGameStarted(true);
+    setGameStats(null);
+  };
 
   const handleGameEnd = (stats) => {
-    setGameStats(stats)
-  }
+    console.log('App.jsx: handleGameEnd called with stats:', stats);
+    setGameStats(stats);
+  };
 
   const handleNewGame = () => {
-    setGameStarted(false)
-    setGameOptions(null)
-    setGameStats(null)
-  }
+    console.log('App.jsx: handleNewGame called');
+    setGameStarted(false);
+    setGameOptions(null);
+    setGameStats(null);
+  };
 
   const handlePlayAgain = () => {
-    setGameStats(null)
-  }
+    console.log('App.jsx: handlePlayAgain called');
+    setGameStats(null);
+  };
+
+  console.log('App.jsx: gameStarted:', gameStarted, 'gameOptions:', gameOptions);
 
   if (gameStats) {
     return (
-      <ResultScreen 
+      <ResultScreen
         gameStats={gameStats}
         onPlayAgain={handlePlayAgain}
         onNewGame={handleNewGame}
       />
-    )
+    );
   }
 
   if (gameStarted) {
     return (
       <>
-      {/* this is expected to be filled :)) */}
+        <Game
+          options={gameOptions}
+          onGameEnd={handleGameEnd}
+          onMenuOpen={() => setIsMenuOpen(true)}
+        />
       </>
-    )
+    );
   }
 
-  return <StartScreen onStartGame={handleStartGame} />
+  return <StartScreen onStartGame={handleStartGame} />;
 }
 
-export default App
+export default App;
