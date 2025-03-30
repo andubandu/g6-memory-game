@@ -1,7 +1,7 @@
-function Card({ value, isFlipped, isMatched, onClick }) {
-  return (
-    // this component is expected to be filled...
-  )
+function Card({ value, isFlipped, isMatched, onClick }) {  
+  return(
+  <h1>add things please</h1>
+)
 }
 
 export default Card

@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 
 function Game({ options, onGameEnd }) {
-  // this component is expected to be filled...
+  return(
+    <h1>add things please</h1>
+  )
 }
 
 export default Game

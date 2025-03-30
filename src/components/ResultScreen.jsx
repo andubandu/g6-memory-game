@@ -1,5 +1,7 @@
 function ResultScreen({ gameStats, onPlayAgain, onNewGame }) {
- // this component is expected to be filled...
+    return(
+        <h1>add things please</h1>
+      )
 }
 
 export default ResultScreen
