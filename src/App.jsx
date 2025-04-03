@@ -49,11 +49,11 @@ function App() {
   if (gameStarted) {
     return (
       <>
-        <Game
-          options={gameOptions}
-          onGameEnd={handleGameEnd}
-          onMenuOpen={() => setIsMenuOpen(true)}
-        />
+          <Game
+      options={gameOptions}
+      onGameEnd={handleGameEnd}
+      onNewGame={handleNewGame} // StartScreen-ზე დაბრუნება
+    />
       </>
     );
   }
