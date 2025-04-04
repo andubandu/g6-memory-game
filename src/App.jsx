@@ -52,7 +52,7 @@ function App() {
           <Game
       options={gameOptions}
       onGameEnd={handleGameEnd}
-      onNewGame={handleNewGame} // StartScreen-ზე დაბრუნება
+      onNewGame={handleNewGame} 
     />
       </>
     );

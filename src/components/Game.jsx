@@ -91,12 +91,12 @@ function Game({ options, onGameEnd, onNewGame }) {
   return (
    <div> 
     <div className="flex justify-between items-center mb-4 mt-[50px]">
-  <p className="text-[30px] ml-[100px]">
+  <p className="text-[30px] ml-[100px] max-[700px]:ml-[20px]">
     memory
   </p>
   <div className="flex gap-4">
     <button 
-      className="bg-[#FDA214] text-white px-4 py-2 rounded-[20px] hover:bg-[#FFB84A]" 
+      className="bg-[#FDA214] text-white px-4 py-2 rounded-[20px] hover:bg-[#FFB84A] max-[700px]:ml-[40px] max-[600px]:w-100px " 
       onClick={onNewGame} 
     >
       New Game
@@ -145,9 +145,9 @@ function Game({ options, onGameEnd, onNewGame }) {
       </div>
 
     
-      <div className="mt-4 flex gap-[30px] items-center">
+      <div className="mt-4 flex flex-wrap gap-[30px] items-center justify-center">
   {playersCount === 1 && (
-    <div className="text-black px-4 py-2 rounded-md bg-[#DFE7EC] font-semibold">
+    <div className="text-black p-[17px]  rounded-md bg-[#DFE7EC] font-semibold">
       Time:  {formatTime(timer)}
     </div>
   )}
@@ -155,7 +155,7 @@ function Game({ options, onGameEnd, onNewGame }) {
   {Array.from({ length: playersCount }).map((_, idx) => (
     <div
       key={idx}
-      className={`text-black px-4 p-[15px] rounded-md font-semibold ${
+      className={`text-black px-4 p-[17px] rounded-md  font-semibold ${
         playersCount === 1 ? "bg-[#DFE7EC] " : currentPlayer === idx ? "bg-yellow-500" : "bg-[#DFE7EC]"
       }`}
     >
